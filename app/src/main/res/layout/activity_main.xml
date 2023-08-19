@@ -3,11 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="vm"
-            type="com.ej.twowaybinding.MainViewModel" />
-    </data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,36 +20,43 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/textInputArea"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="age"
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/insert"
+                android:id="@+id/save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="insert" />
+                android:text="save" />
 
             <Button
-                android:id="@+id/getData"
+                android:id="@+id/get"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="getData" />
+                android:text="get" />
 
             <Button
-                android:id="@+id/delete"
+                android:id="@+id/next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="delete" />
+                android:text="next" />
 
-            <TextView
-                android:id="@+id/resultArea"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userRV"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="resultArea"
-                android:textSize="30sp" />
+                android:layout_height="match_parent" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

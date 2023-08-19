@@ -6,23 +6,23 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [TextEntity::class], version = 1)
-abstract class TextDatabase : RoomDatabase(){
+@Database(entities = [UserEntity::class], version = 2)
+abstract class MyDatabase : RoomDatabase(){
 
-    abstract fun textDao() : TextDao
+    abstract fun userDao() : UserDao
 
     companion object{
 
         @Volatile
-        private var INSTANCE : TextDatabase? = null
+        private var INSTANCE : MyDatabase? = null
 
-        fun getDatabase(context: Context) : TextDatabase{
+        fun getDatabase(context: Context) : MyDatabase{
 
             return INSTANCE ?: synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    TextDatabase::class.java,
-                    "text_database"
+                    MyDatabase::class.java,
+                    "user_database"
                 )
                     .fallbackToDestructiveMigration()
                     .build()

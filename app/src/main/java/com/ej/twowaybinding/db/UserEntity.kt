@@ -4,13 +4,15 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Entity(tableName = "user_table")
+data class UserEntity(
 
-@Entity(tableName = "text_table")
-data class TextEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id : Int,
-    @ColumnInfo(name = "text")
-    val text : String
+    var id : Int,
+    @ColumnInfo(name = "name")
+    var name : String,
+    @ColumnInfo(name = "age")
+    var age : Int,
 ) {
 }
